@@ -1,0 +1,45 @@
+db.createCollection("Customers",{
+    validator:{
+        $jsonSchema:{
+            bsonType:"object",
+            required:["_id","Address","City","Country","District","FirstName","LastName","Status"],
+            properties:{
+                _id:{
+                    bsonType: "int",
+                    description: "Unique id and is required"
+                },
+                Address: {
+                    bsonType: "string",
+                    description: "must be string and is required"
+                },
+                City:{
+                    bsonType:"string",
+                    description:"must be string and is required"
+                },
+                Country: {  
+                    bsonType:"string",
+                    description: "must be string and is required"
+                },
+                District: {
+                    bsonType: "string",
+                    description: "must be string and is required"
+                },
+                FirstName:{
+                    bsonType:"string",
+                    description:"must be string and is required"
+                },
+                LastName: {
+                    bsonType: "string",
+                    description: " must be string and is required"
+                },
+                Status:{
+                    enum:["Active","Inactive"],
+                    description: "only can use ACTIVE OR INACTIVE and is required"
+                }
+                
+            }
+        }
+    },
+    validationLevel: "moderate",
+    validationAction: "error"
+});

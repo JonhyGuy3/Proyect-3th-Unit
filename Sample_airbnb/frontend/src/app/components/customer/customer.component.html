@@ -1,0 +1,75 @@
+<div class="container">
+    <div class="row">
+        <div class="col s5">
+            <div class="card">
+                <div class="card-content">
+                    <form #customerForm="ngForm" (ngSubmit)="addCustomer(customerForm)">
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="customerService.selectedCustomer._id">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input type="text" name="Address" #Address="ngModel" [(ngModel)]="customerService.selectedCustomer.Address" placeholder="Adreess">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="City" #City="ngModel" [(ngModel)]="customerService.selectedCustomer.City" placeholder="City">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="Country" #Country="ngModel" [(ngModel)]="customerService.selectedCustomer.Country" placeholder="Contry">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="District" #District="ngModel" [(ngModel)]="customerService.selectedCustomer.District" placeholder="District">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="customerService.selectedCustomer.FirstName" placeholder="First Name">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="customerService.selectedCustomer.LastName" placeholder="Last Name">
+                            </div>
+                            <div class="input-field col s12">
+                                <input type="text" name="Status" #Status="ngModel" [(ngModel)]="customerService.selectedCustomer.Status" placeholder="Status">
+                            </div>
+
+                            <div class="card-action">
+                                <div class="input-field col s12">
+                                    <button class="btn right" style="margin-left: 2px;" (click)="resetForm(customerForm)">Clean</button>
+                                    <button class="btn right">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s7">
+            <table>
+                <thead>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>District</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Status</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let customer of customerService.customers">
+                        <td>{{customer.Address}}</td>
+                        <td>{{customer.City}}</td>
+                        <td>{{customer.Country}}</td>
+                        <td>{{customer.District}}</td>
+                        <td>{{customer.FirstName}}</td>
+                        <td>{{customer.LastName}}</td>
+                        <td>{{customer.Status}}</td>
+                        <td>
+                            <a (click)="editCustomer(customer)">
+                                edit
+                            </a>
+                            <a (click)="deleteCustomer(customer._id)">
+                                delete
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

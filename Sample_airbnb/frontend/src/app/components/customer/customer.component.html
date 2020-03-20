@@ -25,7 +25,7 @@
                                 <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="customerService.selectedCustomer.LastName" placeholder="Last Name">
                             </div>
                             <div class="input-field col s12">
-                                <input type="text" name="Status" #Status="ngModel" [(ngModel)]="customerService.selectedCustomer.Status" placeholder="Status">
+                                <input type="text" name="Status" #Status="ngModel" [(ngModel)]="customerService.selectedCustomer.Status" placeholder="Status Active/Inactive">
                             </div>
 
                             <div class="card-action">
@@ -49,6 +49,7 @@
                     <th>FirstName</th>
                     <th>LastName</th>
                     <th>Status</th>
+                    <th>Options</th>
                 </thead>
                 <tbody>
                     <tr *ngFor="let customer of customerService.customers">
@@ -60,16 +61,16 @@
                         <td>{{customer.LastName}}</td>
                         <td>{{customer.Status}}</td>
                         <td>
-                            <a (click)="editCustomer(customer)">
-                                edit
+                            <a (click)="editCustomer(customer)" style="cursor: pointer;">
+                                <i class="material-icons">edit</i>
                             </a>
-                            <a (click)="deleteCustomer(customer._id)">
-                                delete
+                            <a (click)="deleteCustomer(customer._id)" style="cursor: pointer;">
+                                <i class="material-icons" >delete</i>
                             </a>
                         </td>
                     </tr>
                 </tbody>
-            </table>
+            </table> 
         </div>
     </div>
 </div>

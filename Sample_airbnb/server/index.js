@@ -15,7 +15,8 @@ app.use(express.json());
 app.use(cors({origin: 'http://localhost:4200'}));
 
 // Routes
-app.use('/api/customer',require('./routes/airbnb.routes'))
+app.use('/api/customer',require('./routes/airbnb.routes'));
+app.use('/api/review', require('./routes/review.routes'));
 
 // Starting the server
 app.listen(app.get('port'),() => {

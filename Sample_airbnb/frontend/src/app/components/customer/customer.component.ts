@@ -3,6 +3,8 @@ import { CustomerService } from './../../services/customer.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',

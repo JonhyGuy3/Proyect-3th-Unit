@@ -2,6 +2,11 @@ const Review = require('../models/listenandreviews');
 const Customer = require('../models/customer');
 const reviewCtrl = {};
 
+reviewCtrl.getReviews = async (req,res) => {
+    const reviews = await Review.find();
+    res.json(reviews);
+};
+
 reviewCtrl.getReview = async (req,res) => {
     const reviews = await Customer.aggregate([{
         $lookup:{
@@ -9,21 +14,7 @@ reviewCtrl.getReview = async (req,res) => {
             localField:"_id",
             foreignField:"idcustomer",
             as: "part6"
-        }},
-    {$unwind:"$part6"},
-    {$project:{
-        "_id":1,
-        "Address":1,
-        "City":1,
-        "Country":1,
-        "District":1,
-        "FirstName":1,
-        "LastName":1,
-        "part6.name":1,
-        "part6.price":1,
-        "part6.property_type":1,
-        "part6.id_customer":1
-    }}
+        }}
     ]);
     res.json(reviews);
 };

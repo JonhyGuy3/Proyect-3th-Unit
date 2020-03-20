@@ -1,0 +1,9 @@
+db.createCollection("listenandreviews");
+
+insertar los siguientes campos
+{ "_id" : ObjectId("5e7422d1e9c3d607edfbea55"), "name" : "Charming Flat in Downtown Moda", "price" : 500, "property_type" : "House", "idcustomer" : 3 }
+{ "_id" : ObjectId("5e74230ae9c3d607edfbea56"), "name" : "One bedroom apartment in Istanbul", "price" : 1000, "property_type" : "Apartment", "idcustomer" : 4 }
+{ "_id" : ObjectId("5e742329e9c3d607edfbea57"), "name" : "The Loft", "price" : 200, "property_type" : "Loft", "idcustomer" : 4 }
+{ "_id" : ObjectId("5e742348e9c3d607edfbea58"), "name" : "Condominium One", "price" : 5000, "property_type" : "Condominium", "idcustomer" : 3 }
+{ "_id" : ObjectId("5e74d55bc22889eb7d56ae35"), "name" : "Remodeled Modern House", "price" : 2000, "property_type" : "House", "idcustomer" : 0 }
+{ "_id" : ObjectId("5e74d59ac22889eb7d56ae36"), "name" : "Two bedrooms Apartment", "price" : 1500, "property_type" : "Apartment", "idcustomer" : 0 }

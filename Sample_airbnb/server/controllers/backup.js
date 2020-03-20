@@ -1,5 +1,3 @@
-
-
 const { exec } = require("child_process");
 
 exec("mongodump -d sample_airbnb -o/backup", (error, stdout, stderr) => {
@@ -13,3 +11,4 @@ exec("mongodump -d sample_airbnb -o/backup", (error, stdout, stderr) => {
     }
     console.log(`stdout: ${stdout}`);
 });
+
